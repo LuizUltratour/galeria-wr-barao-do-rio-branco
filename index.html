@@ -92,15 +92,15 @@
 
     .f-btn {
       padding: 7px 20px;
-      border: 2px solid rgba(237,208,158,0.75);
-      background: #F6EAD2;
+      border: 2px solid #EDD09E;
+      background: rgba(0,53,43,0.5);
       cursor: pointer;
       font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 400;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: #00352B;
+      color: #EDD09E;
       white-space: nowrap;
       border-radius: 20px;
       transition: background 0.22s var(--ease), color 0.22s var(--ease), border-color 0.22s var(--ease), transform 0.15s var(--ease);
@@ -130,14 +130,14 @@
 
     .sf-btn {
       padding: 5px 16px;
-      border: 2px solid rgba(237,208,158,0.75);
-      background: #F6EAD2;
+      border: 2px solid #EDD09E;
+      background: rgba(0,53,43,0.5);
       cursor: pointer;
       font-family: var(--font-sans);
       font-size: 10.5px;
       font-weight: 400;
       letter-spacing: 0.05em;
-      color: #00352B;
+      color: #EDD09E;
       white-space: nowrap;
       border-radius: 20px;
       transition: border-color 0.2s, background 0.2s, color 0.2s;
@@ -984,8 +984,8 @@ const MODE = (() => {
 // (modo 'plantas' não tem sub-categorias — filtro principal fica oculto)
 const DISPLAY_CATS = (() => {
   if (MODE === 'plantas') return [];
-  if (MODE === 'imagens') return GALLERY_CONFIG.categories.filter(c => c.id !== 'plantas');
-  return GALLERY_CONFIG.categories;
+  // Apartamentos (plantas) só aparece no modo plantas
+  return GALLERY_CONFIG.categories.filter(c => c.id !== 'plantas' && c.id !== 'apartamentos');
 })();
 
 // ── helpers ──────────────────────────────────────────────────────
@@ -1044,7 +1044,7 @@ function filteredItems() {
   return GALLERY_CONFIG.items.filter(item => {
     // Filtro de modo
     if (MODE === 'plantas' && !item.isPlant) return false;
-    if (MODE === 'imagens' && item.category === 'plantas') return false;
+    if (MODE !== 'plantas' && (item.category === 'plantas' || item.isPlant)) return false;
 
     // Filtro de categoria (modo 'plantas' não tem sub-filtro — mostra tudo)
     if (MODE !== 'plantas') {
