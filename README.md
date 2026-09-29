@@ -1,8 +1,8 @@
-# Galeria — Coutinho Maison Lily
+# Galeria — WR Barão do Rio Branco
 
 Galeria de imagens/plantas/vídeo para injeção via script no 3DVista, hospedada no AWS S3.
 
-**Empreendimento:** Maison Lily — Coutinho
+**Empreendimento:** Barão do Rio Branco — WR
 **Tema:** cinza-chumbo + dourado (`#646461` / `#2B2A27`)
 
 ---
@@ -11,62 +11,45 @@ Galeria de imagens/plantas/vídeo para injeção via script no 3DVista, hospedad
 
 | Arquivo | URL |
 |---------|-----|
-| Galeria | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/COUTINHO/galeria-maison-lily/index.html` |
-| Vídeo   | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/COUTINHO/galeria-maison-lily/video-gallery.html` |
-| Script  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/COUTINHO/galeria-maison-lily/inject.js` |
+| Galeria | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/wr/galeria-wr-barao-do-rio-branco/index.html` |
+| Vídeo   | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/wr/galeria-wr-barao-do-rio-branco/video-gallery.html` |
+| Script  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/wr/galeria-wr-barao-do-rio-branco/inject.js` |
 
-**S3 path:** `s3://skylineip/Tour Virtual/COUTINHO/galeria-maison-lily/`
+**S3 path:** `s3://skylineip/Tour Virtual/wr/galeria-wr-barao-do-rio-branco/`
 
 ---
 
 ## Estrutura de arquivos
 
 ```
-galeria/  (coutinho / maison lily)
-├── index.html              ← galeria de imagens + plantas (auto-suficiente)
+galeria-wr-barao-do-rio-branco/
+├── index.html              ← galeria de imagens (auto-suficiente)
 ├── video-gallery.html      ← player do vídeo de apresentação
 ├── inject.js               ← loader leve para injeção no 3DVista
-├── deploy.ps1               ← deploy para o S3 (Windows; normaliza case + sync)
-├── generate_thumbs.ps1      ← gerador de thumbnails (Windows/GDI+, sem deps)
+├── deploy.ps1              ← deploy para o S3 (Windows; normaliza case + sync)
+├── generate_thumbs.ps1     ← gerador de thumbnails (Windows/GDI+, sem deps)
 └── assets/
-    ├── imagens/
-    │   ├── AREA COMUM/                  ← fachada, academia, barbearia, brinquedoteca,
-    │   │                                   espaço pet, gourmet, hall social, home office,
-    │   │                                   mini quadra, piscina, playground, reunião,
-    │   │                                   salão de beleza, salão de festa
-    │   ├── AP 165M - TERM 3/            ← unidade 165m² — terraço 3
-    │   ├── AP 250M - TERM 1 E 2/        ← unidade 250m² — terraços 1 e 2
-    │   └── RECORTES/                    ← closes/detalhes decorativos
-    ├── plantas/                         ← subsolo, garagem, pilotis, mezaninos,
-    │                                       pavimento tipo, lazer, coberturas
-    └── thumbs/                          ← gerado automaticamente (espelha a árvore, .jpg)
+    ├── fachada/            ← Fachada (1-5) e Foto Inserção (1-2)
+    ├── tipo-cobertura/     ← Tipo (1-11) e Cobertura (1-2)
+    ├── areas-comuns/       ← academia, garagem, gourmet, hall, lazer, pet place,
+    │                          playground, salão de festas
+    └── thumbs/             ← gerado automaticamente (espelha a árvore, .jpg)
 ```
 
-> **Pastas = categorias.** Os nomes das pastas em `assets/` definem as categorias/subcategorias.
-> Mantenha-os **minúsculos e sem espaços/acentos** (o S3 é case-sensitive) — nomes de
-> arquivo com acento precisam estar em Unicode NFC (precomposto), não NFD.
+> **Pastas em minúsculas e sem acento** (o S3 é case-sensitive) — nomes de arquivo com
+> acento precisam estar em Unicode NFC (precomposto), não NFD.
 
 ---
 
 ## Categorias da galeria
 
-### Modo `imagens`
-
 | Categoria | Label | Sub-categorias | Pasta |
 |-----------|-------|----------------|-------|
-| `fachada` | Fachada | — | `assets/imagens/AREA COMUM/` (arquivos `1. FACHADA*`) |
-| `apartamentos` | Apartamentos | AP 165m² — Terraço 3 · AP 250m² — Terraços 1 e 2 | `assets/imagens/AP 165M - TERM 3/`, `assets/imagens/AP 250M - TERM 1 E 2/` |
-| `areas-comuns` | Áreas Comuns | Academia · Barbearia · Brinquedoteca · Espaço Pet · Gourmet · Hall Social · Home Office · Mini Quadra · Piscina · Playground · Sala de Reunião · Salão de Beleza · Salão de Festa | `assets/imagens/AREA COMUM/` |
-| `detalhes` | Detalhes | — | `assets/imagens/RECORTES/` |
+| `fachada` | Fachada | — | `assets/fachada/` |
+| `apartamentos` | Apartamentos | Tipo · Cobertura | `assets/tipo-cobertura/` |
+| `areas-comuns` | Áreas Comuns | — | `assets/areas-comuns/` |
 
-### Modo `plantas`
-
-Categoria única `plantas`, sem sub-filtro — mostra todos os pavimentos em grade
-(subsolo 1/2, garagem, pilotis, mezanino 01/02, pavimento tipo, pavimento tipo 3 quartos,
-lazer, cobertura 1/2). Pasta: `assets/plantas/`.
-
-> Há duas versões do "Pavimento Tipo 1" (Fev/26 e Mar/26) — ambas foram mantidas na
-> galeria distinguidas por subtítulo. Remova a desatualizada se for o caso.
+O modo `plantas` do código permanece, mas não há plantas cadastradas neste projeto.
 
 ---
 
@@ -110,7 +93,7 @@ então uma vez enviado com `-WithVideo` ele permanece no S3 nas próximas sincro
 ```js
 (function(){
   var s = document.createElement('script');
-  s.src = 'https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/COUTINHO/galeria-maison-lily/inject.js?v=' + Date.now();
+  s.src = 'https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/wr/galeria-wr-barao-do-rio-branco/inject.js?v=' + Date.now();
   document.head.appendChild(s);
 })();
 ```
@@ -122,7 +105,6 @@ então uma vez enviado com `-WithVideo` ele permanece no S3 nas próximas sincro
 
 ```js
 GaleriaImagens(1);      // abre galeria de imagens   · GaleriaImagens(0) fecha
-GaleriaPlantas(1);      // abre galeria de plantas    · GaleriaPlantas(0) fecha
 AbrirGaleriaVideos(1);  // abre o vídeo de apresentação · AbrirGaleriaVideos(0) fecha
 ```
 
@@ -134,7 +116,7 @@ AbrirGaleriaVideos(1);  // abre o vídeo de apresentação · AbrirGaleriaVideos
 
 ## Cores e tipografia
 
-Tema **cinza-chumbo + dourado** da Coutinho Maison Lily:
+Tema **cinza-chumbo + dourado** da WR Barão do Rio Branco:
 
 | Token CSS | Valor | Papel |
 |-----------|-------|-------|

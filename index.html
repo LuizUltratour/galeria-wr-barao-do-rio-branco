@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria — Coutinho Maison Lily</title>
+  <title>Galeria — WR Barão do Rio Branco</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Coutinho Maison Lily — tema cinza-chumbo/dourado.
+      /* WR Barão do Rio Branco — tema cinza-chumbo/dourado.
          --bg = cinza (646461) · --dark = quase-branco (foreground) · --accent = chumbo escuro */
       --bg: #646461;            /* cinza-chumbo — fundo principal */
       --surface: #706E6B;       /* superfície de card (skeleton) */
@@ -816,7 +816,7 @@
 
   <!-- Header -->
   <header id="g-header">
-    <img id="g-logo" src="assets/LOGO.png" alt="Coutinho Maison Lily">
+    <img id="g-logo" src="assets/LOGO.png" alt="WR Barão do Rio Branco">
     <button id="btn-close" title="Fechar galeria" aria-label="Fechar"></button>
   </header>
 
@@ -885,7 +885,7 @@
 // os campos src com os nomes exatos dos arquivos.
 // ================================================================
 const GALLERY_CONFIG = {
-  projectName: 'COUTINHO MAISON LILY',
+  projectName: 'WR BARÃO DO RIO BRANCO',
   projectSub:  '',
 
   categories: [
@@ -893,119 +893,53 @@ const GALLERY_CONFIG = {
     {
       id: 'apartamentos', label: 'Apartamentos',
       subs: [
-        { id: 'ap-165', label: 'AP 165m² — Terraço 3' },
-        { id: 'ap-250', label: 'AP 250m² — Terraços 1 e 2' },
-        { id: 'ap-cob', label: 'Cobertura 460m² — Terminações 1 e 2' },
+        { id: 'tipo', label: 'Tipo' },
+        { id: 'cobertura', label: 'Cobertura' },
       ]
     },
     { id: 'areas-comuns', label: 'Áreas Comuns' },
-    { id: 'detalhes', label: 'Detalhes' },
-    { id: 'plantas', label: 'Plantas' },
   ],
 
   items: [
 
-    // ═══ FACHADA ═══════════════════════════════════════════════════
-    { id:1, type:'image', category:'fachada', title:'Fachada — Entrada',        src:'assets/imagens/AREA COMUM/1. FACHADA - ENTRADA.png',      thumb:'assets/thumbs/imagens/area comum/1. fachada - entrada.jpg' },
-    { id:2, type:'image', category:'fachada', title:'Fachada — Entrada 2',      src:'assets/imagens/AREA COMUM/1. FACHADA - ENTRADA 2.jpg',    thumb:'assets/thumbs/imagens/area comum/1. fachada - entrada 2.jpg' },
-    { id:3, type:'image', category:'fachada', title:'Fachada Lateral',          src:'assets/imagens/AREA COMUM/1. FACHADA LATERAL.png',        thumb:'assets/thumbs/imagens/area comum/1. fachada lateral.jpg' },
-    { id:4, type:'image', category:'fachada', title:'Fachada Lateral 2',        src:'assets/imagens/AREA COMUM/1. FACHADA LATERAL 2.png',      thumb:'assets/thumbs/imagens/area comum/1. fachada lateral 2.jpg' },
-    { id:5, type:'image', category:'fachada', title:'Fachada Lateral — Noite',  src:'assets/imagens/AREA COMUM/1. FACHADA LATERAL NOITE.png',  thumb:'assets/thumbs/imagens/area comum/1. fachada lateral noite.jpg' },
+    // ═══ FACHADA ═══
+    { id:1, type:'image', category:'fachada', title:'Fachada 1', src:'assets/fachada/Fachada (1).png', thumb:'assets/thumbs/fachada/fachada (1).jpg' },
+    { id:2, type:'image', category:'fachada', title:'Fachada 2', src:'assets/fachada/Fachada (2).png', thumb:'assets/thumbs/fachada/fachada (2).jpg' },
+    { id:3, type:'image', category:'fachada', title:'Fachada 3', src:'assets/fachada/Fachada (3).png', thumb:'assets/thumbs/fachada/fachada (3).jpg' },
+    { id:4, type:'image', category:'fachada', title:'Fachada 4', src:'assets/fachada/Fachada (4).png', thumb:'assets/thumbs/fachada/fachada (4).jpg' },
+    { id:5, type:'image', category:'fachada', title:'Fachada 5', src:'assets/fachada/Fachada (5).png', thumb:'assets/thumbs/fachada/fachada (5).jpg' },
+    { id:6, type:'image', category:'fachada', title:'Foto Inserção 1', src:'assets/fachada/Foto Inserção (1).png', thumb:'assets/thumbs/fachada/foto inserção (1).jpg' },
+    { id:7, type:'image', category:'fachada', title:'Foto Inserção 2', src:'assets/fachada/Foto Inserção (2).png', thumb:'assets/thumbs/fachada/foto inserção (2).jpg' },
 
-    // ═══ APARTAMENTOS › AP 165M — TERRAÇO 3 ═══════════════════════
-    { id:10, type:'image', category:'apartamentos', subCategory:'ap-165', title:'Estar e Jantar', src:'assets/imagens/AP 165M - TERM 3/165M TERM 3 - ESTAR JANTAR.png',    thumb:'assets/thumbs/imagens/ap 165m - term 3/165m term 3 - estar jantar.jpg' },
-    { id:11, type:'image', category:'apartamentos', subCategory:'ap-165', title:'Suíte Master',   src:'assets/imagens/AP 165M - TERM 3/165M TERM 3 - SUITE MASTER.png',    thumb:'assets/thumbs/imagens/ap 165m - term 3/165m term 3 - suite master.jpg' },
-    { id:12, type:'image', category:'apartamentos', subCategory:'ap-165', title:'Varanda Gourmet', src:'assets/imagens/AP 165M - TERM 3/165M TERM 3 - varanda gourmet.png', thumb:'assets/thumbs/imagens/ap 165m - term 3/165m term 3 - varanda gourmet.jpg' },
+    // ═══ APARTAMENTOS › TIPO ═══
+    { id:8, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 1', src:'assets/tipo-cobertura/Tipo (1).png', thumb:'assets/thumbs/tipo-cobertura/tipo (1).jpg' },
+    { id:9, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 2', src:'assets/tipo-cobertura/Tipo (2).png', thumb:'assets/thumbs/tipo-cobertura/tipo (2).jpg' },
+    { id:10, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 3', src:'assets/tipo-cobertura/Tipo (3).png', thumb:'assets/thumbs/tipo-cobertura/tipo (3).jpg' },
+    { id:11, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 4', src:'assets/tipo-cobertura/Tipo (4).png', thumb:'assets/thumbs/tipo-cobertura/tipo (4).jpg' },
+    { id:12, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 5', src:'assets/tipo-cobertura/Tipo (5).png', thumb:'assets/thumbs/tipo-cobertura/tipo (5).jpg' },
+    { id:13, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 6', src:'assets/tipo-cobertura/Tipo (6).png', thumb:'assets/thumbs/tipo-cobertura/tipo (6).jpg' },
+    { id:14, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 7', src:'assets/tipo-cobertura/Tipo (7).png', thumb:'assets/thumbs/tipo-cobertura/tipo (7).jpg' },
+    { id:15, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 8', src:'assets/tipo-cobertura/Tipo (8).png', thumb:'assets/thumbs/tipo-cobertura/tipo (8).jpg' },
+    { id:16, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 9', src:'assets/tipo-cobertura/Tipo (9).png', thumb:'assets/thumbs/tipo-cobertura/tipo (9).jpg' },
+    { id:17, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 10', src:'assets/tipo-cobertura/Tipo (10).png', thumb:'assets/thumbs/tipo-cobertura/tipo (10).jpg' },
+    { id:18, type:'image', category:'apartamentos', subCategory:'tipo', title:'Tipo 11', src:'assets/tipo-cobertura/Tipo (11).png', thumb:'assets/thumbs/tipo-cobertura/tipo (11).jpg' },
 
-    // ═══ APARTAMENTOS › AP 250M — TERRAÇOS 1 E 2 ═══════════════════
-    { id:20, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Área de Serviço', src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - AREA SERVICO.png',  thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - area servico.jpg' },
-    { id:21, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Cozinha',         src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - COZINHA.png',       thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - cozinha.jpg' },
-    { id:22, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Cozinha 2',       src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - COZINHA 2.png',     thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - cozinha 2.jpg' },
-    { id:23, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Estar e Jantar',  src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - ESTAR JANTAR.png',  thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - estar jantar.jpg' },
-    { id:24, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Estar e Jantar 2', src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - ESTAR JANTAR 2.png', thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - estar jantar 2.jpg' },
-    { id:25, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Jantar',          src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - JANTAR.png',        thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - jantar.jpg' },
-    { id:26, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Jantar 2',        src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - JANTAR 2.png',      thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - jantar 2.jpg' },
-    { id:27, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Suíte Master',    src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - SUITE MASTER.png',  thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - suite master.jpg' },
-    { id:28, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Suíte Master 2',  src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - SUITE MASTER 2.png', thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - suite master 2.jpg' },
-    { id:29, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Varanda',         src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - VARANDA.png',       thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - varanda.jpg' },
+    // ═══ APARTAMENTOS › COBERTURA ═══
+    { id:19, type:'image', category:'apartamentos', subCategory:'cobertura', title:'Cobertura 1', src:'assets/tipo-cobertura/Cobertura (1).png', thumb:'assets/thumbs/tipo-cobertura/cobertura (1).jpg' },
+    { id:20, type:'image', category:'apartamentos', subCategory:'cobertura', title:'Cobertura 2', src:'assets/tipo-cobertura/Cobertura (2).png', thumb:'assets/thumbs/tipo-cobertura/cobertura (2).jpg' },
 
-    // ═══ APARTAMENTOS › COBERTURA 460M² — TERMINAÇÕES 1 E 2 ═══════
-    { id:30, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Estar',              src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/estar-cobertura.png',                    thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/estar-cobertura.jpg' },
-    { id:31, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Estar — TV',         src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/estar-tv-cobertura.png',                 thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/estar-tv-cobertura.jpg' },
-    { id:32, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Jantar',             src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/jantar-cobertura.png',                   thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/jantar-cobertura.jpg' },
-    { id:33, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Suíte Master',       src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/suite-master-cobertura.png',              thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/suite-master-cobertura.jpg' },
-    { id:34, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Closet da Suíte',    src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/closet-suite-cobertura.png',              thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/closet-suite-cobertura.jpg' },
-    { id:35, type:'image', category:'apartamentos', subCategory:'ap-cob', title:'Varanda — Vista Direita', src:'assets/imagens/COBERTURA 460M2 - TERMINACOES 1 E 2/varanda-cob-duplex-vista direita.png', thumb:'assets/thumbs/imagens/cobertura 460m2 - terminacoes 1 e 2/varanda-cob-duplex-vista direita.jpg' },
-
-    // ═══ ÁREAS COMUNS › ACADEMIA ═══════════════════════════════════
-    { id:40, type:'image', category:'areas-comuns', title:'Academia',                    src:'assets/imagens/AREA COMUM/ACADEMIA.png',           thumb:'assets/thumbs/imagens/area comum/academia.jpg' },
-    { id:41, type:'image', category:'areas-comuns', title:'Academia — Espaço Multiuso',  src:'assets/imagens/AREA COMUM/ACADEMIA - MULTIUSO.png', thumb:'assets/thumbs/imagens/area comum/academia - multiuso.jpg' },
-
-    // ═══ ÁREAS COMUNS › BARBEARIA ═══════════════════════════════════
-    { id:42, type:'image', category:'areas-comuns', title:'Barbearia', src:'assets/imagens/AREA COMUM/BARBEARIA.png', thumb:'assets/thumbs/imagens/area comum/barbearia.jpg' },
-
-    // ═══ ÁREAS COMUNS › BRINQUEDOTECA ═══════════════════════════════
-    { id:43, type:'image', category:'areas-comuns', title:'Brinquedoteca', src:'assets/imagens/AREA COMUM/BRINQUEDOTECA.png', thumb:'assets/thumbs/imagens/area comum/brinquedoteca.jpg' },
-
-    // ═══ ÁREAS COMUNS › ESPAÇO PET ═══════════════════════════════════
-    { id:44, type:'image', category:'areas-comuns', title:'Espaço Pet', src:'assets/imagens/AREA COMUM/ESPAÇO PET.png', thumb:'assets/thumbs/imagens/area comum/espaço pet.jpg' },
-
-    // ═══ ÁREAS COMUNS › GOURMET ═══════════════════════════════════
-    { id:45, type:'image', category:'areas-comuns', title:'Espaço Gourmet',       src:'assets/imagens/AREA COMUM/GOURMET.png',          thumb:'assets/thumbs/imagens/area comum/gourmet.jpg' },
-    { id:46, type:'image', category:'areas-comuns', title:'Gourmet — Área Externa', src:'assets/imagens/AREA COMUM/GOURMET EXTERNA.png', thumb:'assets/thumbs/imagens/area comum/gourmet externa.jpg' },
-
-    // ═══ ÁREAS COMUNS › HALL SOCIAL ═══════════════════════════════
-    { id:47, type:'image', category:'areas-comuns', title:'Hall Social',            src:'assets/imagens/AREA COMUM/HALL SOCIAL.png',   thumb:'assets/thumbs/imagens/area comum/hall social.jpg' },
-    { id:48, type:'image', category:'areas-comuns', title:'Hall Social — Vista 2',  src:'assets/imagens/AREA COMUM/HALL SOCIAL 2.png', thumb:'assets/thumbs/imagens/area comum/hall social 2.jpg' },
-
-    // ═══ ÁREAS COMUNS › HOME OFFICE ═══════════════════════════════
-    { id:49, type:'image', category:'areas-comuns', title:'Home Office', src:'assets/imagens/AREA COMUM/HOME OFFICE.png', thumb:'assets/thumbs/imagens/area comum/home office.jpg' },
-
-    // ═══ ÁREAS COMUNS › MINI QUADRA ═══════════════════════════════
-    { id:50, type:'image', category:'areas-comuns', title:'Mini Quadra', src:'assets/imagens/AREA COMUM/MINI QUADRA.png', thumb:'assets/thumbs/imagens/area comum/mini quadra.jpg' },
-
-    // ═══ ÁREAS COMUNS › PISCINA ═══════════════════════════════════
-    { id:51, type:'image', category:'areas-comuns', title:'Piscina',           src:'assets/imagens/AREA COMUM/PISCINA.png',   thumb:'assets/thumbs/imagens/area comum/piscina.jpg' },
-    { id:52, type:'image', category:'areas-comuns', title:'Piscina — Vista 2', src:'assets/imagens/AREA COMUM/PISCINA 2.png', thumb:'assets/thumbs/imagens/area comum/piscina 2.jpg' },
-
-    // ═══ ÁREAS COMUNS › PLAYGROUND ═══════════════════════════════════
-    { id:53, type:'image', category:'areas-comuns', title:'Playground', src:'assets/imagens/AREA COMUM/PLAYGROUND.png', thumb:'assets/thumbs/imagens/area comum/playground.jpg' },
-
-    // ═══ ÁREAS COMUNS › SALA DE REUNIÃO ═══════════════════════════════
-    { id:54, type:'image', category:'areas-comuns', title:'Sala de Reunião', src:'assets/imagens/AREA COMUM/REUNIAO.png', thumb:'assets/thumbs/imagens/area comum/reuniao.jpg' },
-
-    // ═══ ÁREAS COMUNS › SALÃO DE BELEZA ═══════════════════════════════
-    { id:55, type:'image', category:'areas-comuns', title:'Salão de Beleza', src:'assets/imagens/AREA COMUM/SALAO DE BELEZA.png', thumb:'assets/thumbs/imagens/area comum/salao de beleza.jpg' },
-
-    // ═══ ÁREAS COMUNS › SALÃO DE FESTA ═══════════════════════════════
-    { id:56, type:'image', category:'areas-comuns', title:'Salão de Festa', src:'assets/imagens/AREA COMUM/SALAO DE FESTA.png', thumb:'assets/thumbs/imagens/area comum/salao de festa.jpg' },
-
-    // ═══ DETALHES (recortes decorativos) ═══════════════════════════
-    { id:70, type:'image', category:'detalhes', title:'Detalhe — Entrada',              src:'assets/imagens/RECORTES/close-entrada.png',        thumb:'assets/thumbs/imagens/recortes/close-entrada.jpg' },
-    { id:71, type:'image', category:'detalhes', title:'Detalhe — Varandas',             src:'assets/imagens/RECORTES/close-varandas.png',       thumb:'assets/thumbs/imagens/recortes/close-varandas.jpg' },
-    { id:72, type:'image', category:'detalhes', title:'Detalhe — Banquinho',            src:'assets/imagens/RECORTES/close bancquinho.jpeg',    thumb:'assets/thumbs/imagens/recortes/close bancquinho.jpg' },
-    { id:73, type:'image', category:'detalhes', title:'Detalhe — Cascata',              src:'assets/imagens/RECORTES/close cascata.png',        thumb:'assets/thumbs/imagens/recortes/close cascata.jpg' },
-    { id:74, type:'image', category:'detalhes', title:'Detalhe — Garrafas',             src:'assets/imagens/RECORTES/close garrfas.jpeg',       thumb:'assets/thumbs/imagens/recortes/close garrfas.jpg' },
-    { id:75, type:'image', category:'detalhes', title:'Detalhe — Jarro sobre Mesa',     src:'assets/imagens/RECORTES/close jarro mesas.jpeg',   thumb:'assets/thumbs/imagens/recortes/close jarro mesas.jpg' },
-    { id:76, type:'image', category:'detalhes', title:'Detalhe — Jarros sobre Mesa',    src:'assets/imagens/RECORTES/close jarros mesas 02.jpeg', thumb:'assets/thumbs/imagens/recortes/close jarros mesas 02.jpg' },
-    { id:77, type:'image', category:'detalhes', title:'Detalhe — Mesinha e Sofá',       src:'assets/imagens/RECORTES/close mesinha sofa.jpeg',  thumb:'assets/thumbs/imagens/recortes/close mesinha sofa.jpg' },
-    { id:78, type:'image', category:'detalhes', title:'Detalhe — Pendente',             src:'assets/imagens/RECORTES/close pendente.jpeg',      thumb:'assets/thumbs/imagens/recortes/close pendente.jpg' },
-    { id:79, type:'image', category:'detalhes', title:'Detalhe — Piscina',              src:'assets/imagens/RECORTES/close piscina.jpeg',       thumb:'assets/thumbs/imagens/recortes/close piscina.jpg' },
-    { id:80, type:'image', category:'detalhes', title:'Detalhe — Brinquedoteca',        src:'assets/imagens/RECORTES/close-brinquedoteca.png',  thumb:'assets/thumbs/imagens/recortes/close-brinquedoteca.jpg' },
-    { id:81, type:'image', category:'detalhes', title:'Detalhe — Brinquedoteca 2',      src:'assets/imagens/RECORTES/close-brinque02.png',      thumb:'assets/thumbs/imagens/recortes/close-brinque02.jpg' },
-
-    // ═══ PLANTAS (do subsolo à cobertura) ═══════════════════════════
-    { id:90,  type:'image', category:'plantas', isPlant:true, title:'Subsolo 2',                      src:'assets/plantas/PBH - PAV SUBSOLO 2 - 29JAN26.png',              thumb:'assets/thumbs/plantas/pbh - pav subsolo 2 - 29jan26.jpg' },
-    { id:91,  type:'image', category:'plantas', isPlant:true, title:'Subsolo 1',                      src:'assets/plantas/PBH - PAV SUBSOLO 1 - 29JAN26.png',              thumb:'assets/thumbs/plantas/pbh - pav subsolo 1 - 29jan26.jpg' },
-    { id:92,  type:'image', category:'plantas', isPlant:true, title:'Garagem',                         src:'assets/plantas/PBH - PAV GARAGEM 1 - 20FEV26.png',              thumb:'assets/thumbs/plantas/pbh - pav garagem 1 - 20fev26.jpg' },
-    { id:93,  type:'image', category:'plantas', isPlant:true, title:'Pilotis',                         src:'assets/plantas/PBH - PAV PILOTIS - 20FEV26.png',                thumb:'assets/thumbs/plantas/pbh - pav pilotis - 20fev26.jpg' },
-    { id:94,  type:'image', category:'plantas', isPlant:true, title:'Mezanino 01',                     src:'assets/plantas/PBH - PAV MEZANINO 01 - 29JAN26.png',            thumb:'assets/thumbs/plantas/pbh - pav mezanino 01 - 29jan26.jpg' },
-    { id:95,  type:'image', category:'plantas', isPlant:true, title:'Mezanino 02',                     src:'assets/plantas/PBH - PAV MEZANINO 2 - 20FEV26.png',             thumb:'assets/thumbs/plantas/pbh - pav mezanino 2 - 20fev26.jpg' },
-    { id:97,  type:'image', category:'plantas', isPlant:true, title:'Pavimento Tipo 1', subtitle:'Mar/26', src:'assets/plantas/PBH - PAV TIPO 1 - 26MAR26.png',            thumb:'assets/thumbs/plantas/pbh - pav tipo 1 - 26mar26.jpg' },
-    { id:98,  type:'image', category:'plantas', isPlant:true, title:'Pavimento Tipo 1 — 3 Quartos', subtitle:'Mar/26', src:'assets/plantas/PBH - PAV TIPO 1 - 26MAR26(3 QUARTOS).png', thumb:'assets/thumbs/plantas/pbh - pav tipo 1 - 26mar26(3 quartos).jpg' },
-    { id:99,  type:'image', category:'plantas', isPlant:true, title:'Pavimento de Lazer',              src:'assets/plantas/PBH - PAV LAZER - 04SET25.png',                  thumb:'assets/thumbs/plantas/pbh - pav lazer - 04set25.jpg' },
-    { id:100, type:'image', category:'plantas', isPlant:true, title:'Cobertura 1',                     src:'assets/plantas/PBH - COBERTURA 1 - 19FEV26.png',                thumb:'assets/thumbs/plantas/pbh - cobertura 1 - 19fev26.jpg' },
-    { id:101, type:'image', category:'plantas', isPlant:true, title:'Cobertura 2',                     src:'assets/plantas/PBH - COBERTURA 2 - 23FEV26.png',                thumb:'assets/thumbs/plantas/pbh - cobertura 2 - 23fev26.jpg' },
+    // ═══ ÁREAS COMUNS ═══
+    { id:21, type:'image', category:'areas-comuns', title:'Academia', src:'assets/areas-comuns/Academia.png', thumb:'assets/thumbs/areas-comuns/academia.jpg' },
+    { id:22, type:'image', category:'areas-comuns', title:'Garagem 1', src:'assets/areas-comuns/Garagem (1).png', thumb:'assets/thumbs/areas-comuns/garagem (1).jpg' },
+    { id:23, type:'image', category:'areas-comuns', title:'Garagem 2', src:'assets/areas-comuns/Garagem (2).png', thumb:'assets/thumbs/areas-comuns/garagem (2).jpg' },
+    { id:24, type:'image', category:'areas-comuns', title:'Gourmet', src:'assets/areas-comuns/Gourmet.png', thumb:'assets/thumbs/areas-comuns/gourmet.jpg' },
+    { id:25, type:'image', category:'areas-comuns', title:'Hall', src:'assets/areas-comuns/Hall.png', thumb:'assets/thumbs/areas-comuns/hall.jpg' },
+    { id:26, type:'image', category:'areas-comuns', title:'Lazer 1', src:'assets/areas-comuns/Lazer (1).png', thumb:'assets/thumbs/areas-comuns/lazer (1).jpg' },
+    { id:27, type:'image', category:'areas-comuns', title:'Lazer 2', src:'assets/areas-comuns/Lazer (2).png', thumb:'assets/thumbs/areas-comuns/lazer (2).jpg' },
+    { id:28, type:'image', category:'areas-comuns', title:'Lazer 3', src:'assets/areas-comuns/Lazer (3).png', thumb:'assets/thumbs/areas-comuns/lazer (3).jpg' },
+    { id:29, type:'image', category:'areas-comuns', title:'Pet Place', src:'assets/areas-comuns/Pet Place.png', thumb:'assets/thumbs/areas-comuns/pet place.jpg' },
+    { id:30, type:'image', category:'areas-comuns', title:'Playground', src:'assets/areas-comuns/Playground.png', thumb:'assets/thumbs/areas-comuns/playground.jpg' },
+    { id:31, type:'image', category:'areas-comuns', title:'Salão de Festas', src:'assets/areas-comuns/Salão de Festas.png', thumb:'assets/thumbs/areas-comuns/salão de festas.jpg' },
   ],
 };
 
