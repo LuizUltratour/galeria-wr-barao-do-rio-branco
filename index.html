@@ -1016,8 +1016,6 @@ function renderMainFilters() {
 }
 
 function renderSubFilters() {
-  // No modo plantas o filtro principal já é a tipologia — sem sub-filtro
-  if (MODE === 'plantas') { elFilterSub.classList.remove('open'); return; }
   const cat = getCat(st.cat);
   if (cat && cat.subs && cat.subs.length) {
     elFilterSubIn.innerHTML = '';
@@ -1047,10 +1045,8 @@ function filteredItems() {
     if (MODE !== 'plantas' && (item.category === 'plantas' || item.isPlant)) return false;
 
     // Filtro de categoria (modo 'plantas' não tem sub-filtro — mostra tudo)
-    if (MODE !== 'plantas') {
-      if (st.cat && item.category !== st.cat) return false;
-      if (st.sub && item.subCategory !== st.sub) return false;
-    }
+    if (st.cat && item.category !== st.cat) return false;
+    if (st.sub && item.subCategory !== st.sub) return false;
     return true;
   });
 }
@@ -1395,9 +1391,11 @@ function closeGallery() {
 function init() {
   // Filtro inicial depende do modo (modo 'plantas' não tem filtro — mostra tudo)
   if (MODE === 'plantas') {
-    st.cat = null;
-    st.sub = null;
-    $('g-filters').style.display = 'none';
+    // Plantas: só sub-filtros (Tipo / Cobertura) da categoria apartamentos
+    st.cat = 'apartamentos';
+    const c0 = getCat(st.cat);
+    st.sub = c0.subs[0].id;
+    elFilterMain.style.display = 'none';
   } else {
     st.cat = DISPLAY_CATS[0].id;               // 'fachada'
     const c0 = getCat(st.cat);
